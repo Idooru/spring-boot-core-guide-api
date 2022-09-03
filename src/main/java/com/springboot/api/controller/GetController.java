@@ -1,6 +1,7 @@
 package com.springboot.api.controller;
 
 import com.springboot.api.dto.MemberDto;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -60,5 +61,10 @@ public class GetController {
     @GetMapping(value = "/request4")
     public MemberDto getRequestParam4(MemberDto memberDto) {
         return memberDto;
+    }
+
+    @GetMapping(value = "/test")
+    public ResponseEntity<String> getTest() {
+        return ResponseEntity.status(200).body("hello");
     }
 }
